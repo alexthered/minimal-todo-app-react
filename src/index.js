@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 
 
-class TodoApp extends React.Component {
-	render() {
-		return (
-			<h2> Down and dirty TodoApp based on React.js </h2>
-		);
-	}
-}
+import TodoDataService from './service/TodoDataService';
+import TodoApp from './components/TodoApp'
 
-ReactDOM.render(<TodoApp />, document.getElementById('app'));
+console.log("App is starting...");
+const todoDataService = new TodoDataService();
+ReactDOM.render(
+	<TodoApp dataService={todoDataService} />,
+	document.getElementById('app')
+);
